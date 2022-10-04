@@ -6,7 +6,7 @@ setuptools.setup(
     author="Justin Janquart, Anna Puecher",
     author_email="j.janquart@uu.nl",
     description="Code to use relative binning in bilby",
-    url="TBD",
+    url="https://github.com/lemnis12/relativebilbying",
     packages=["relativebilbying"],
     install_requires=["bilby",
                       "numpy",
