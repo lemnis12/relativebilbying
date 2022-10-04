@@ -55,6 +55,12 @@ howpublished={\url{https://github.com/lemnis12/relativebilbying}}
 
 
 ### Installation
-a) using this repo:
+a) Using PyPI, you can just run  `pip install relativebilbying`
+b) using this repo:
 - clone the repository
 - run `python setup.py install`
+
+
+### Structure of the repo
+- relativebilbying: folder with the likelihoods to perfrom relative binning in bilby
+- example: folder with example runs for injection on how to use these scripts. 
