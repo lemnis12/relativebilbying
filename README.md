@@ -52,3 +52,9 @@ title="{RelativeBilbying: a package for relative binning with bilby}",
 year={2022},
 howpublished={\url{https://github.com/lemnis12/relativebilbying}}
 }
+
+
+### Installation
+a) using this repo:
+- clone the repository
+- run `python setup.py install`
