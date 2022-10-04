@@ -2,7 +2,7 @@
 
 This code is a complement to the `bilby` package and enables one to perform relative binning in [`bilby`](https://git.ligo.org/tomasz.baka/bilby). We note that, for the moment, the code only implements relative binning without higher order modes.
 
-Relative binning is a method to perform bayesian parameter inference for gravitational waves in a faster way. It has been developped in [Zackay et al](https://arxiv.org/pdf/1806.08792.pdf), [Dai et al](https://arxiv.org/pdf/1806.08793.pdf). Additionally, attempts have been made to develop relative binning for higher-order modes waveforms (see [Leslie et al](https://arxiv.org/pdf/2109.09872.pdf)). 
+Relative binning is a method to perform bayesian parameter inference for gravitational waves in a faster way. It has been developped in [Zackay et al](https://arxiv.org/pdf/1806.08792.pdf), [Dai et al](https://arxiv.org/pdf/1806.08793.pdf), and [Dai et al, repo](https://bitbucket.org/dailiang8/gwbinning/src/master/). Additionally, attempts have been made to develop relative binning for higher-order modes waveforms (see [Leslie et al](https://arxiv.org/pdf/2109.09872.pdf)). 
 
 In this repo, we use the ideas from [Zackay et al](https://arxiv.org/pdf/1806.08792.pdf) and convert them into a bilby compatible format, making it easier to use.
 
