@@ -47,7 +47,7 @@ If you use this code for your work, please give due credits by citating the meth
 
 And also citing this repository:
 @misc{janquart:2022,
-author = "Janquart, Justin",
+author = "Janquart, Justin", "Harsh Narola",
 title="{RelativeBilbying: a package for relative binning with bilby}",
 year={2022},
 howpublished={\url{https://github.com/lemnis12/relativebilbying}}
