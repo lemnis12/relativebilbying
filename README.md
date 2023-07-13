@@ -56,6 +56,7 @@ howpublished={\url{https://github.com/lemnis12/relativebilbying}}
 
 ### Installation
 a) Using PyPI, you can just run  `pip install relativebilbying`
+
 b) using this repo:
 - clone the repository
 - run `python setup.py install`
