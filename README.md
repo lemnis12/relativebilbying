@@ -60,7 +60,7 @@ a) Using PyPI, you can just run  `pip install relativebilbying`
 b) using this repo:
 - clone the repository
 - run `pip install .`
-- When using the code for the waveforms with HOM and precession, the lalsimulation needs to installed from Geraint Pratten's [repository](https://arxiv.org/pdf/1806.08792.pdf)
+- When using the code for the waveforms with HOM and precession, the lalsimulation needs to installed from Geraint Pratten's [repository](https://github.com/GeraintPratten/lalsuite_gp)
 
 
 ### Structure of the repo
