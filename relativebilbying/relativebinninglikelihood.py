@@ -175,7 +175,6 @@ class RelativeBinning(Likelihood):
         self.duration = self.waveform_generator.duration
 
         self.make_relative_binning_information(delta = delta)
-
         # dictionary to be filled by the sampler
         self.parameters = {}
 
@@ -225,10 +224,12 @@ class RelativeBinning(Likelihood):
         nbin = int(np.ceil(dphi[-1] / delta))
         dphi_grid = np.linspace(dphi[0], dphi[-1], nbin+1)
         self.fbin = np.interp(dphi_grid, dphi, f_nt)
-
         # set the bin edges to values for which we have template values
         self.fbin_idxs = np.unique(np.argmin(np.abs(self.waveform_generator.frequency_array[:, np.newaxis] - self.fbin), axis = 0))
+
+
         self.fbin = self.waveform_generator.frequency_array[self.fbin_idxs]
+
         self.Nbin = len(self.fbin) - 1 # number of bins
         self.fm = (self.fbin[1:] + self.fbin[:-1])/2.
         self.binwidths = self.fbin[1:] - self.fbin[:-1] # binwidths
@@ -257,13 +258,14 @@ class RelativeBinning(Likelihood):
 
         # keep the model only at the correct points
         self.h0 = dict()
-        self.idxs_zeros = dict()
+        #self.idxs_zeros = dict()
         for ifo in models.keys():
             self.h0[ifo] = models[ifo][self.fbin_idxs]
             # store indices where h0 is zero to avoid nans later.
             # this is mostly useful when the maximum frequency is too high
             # wrt the maximum frequency reached by the signal
-            self.idxs_zeros[ifo] = np.where(self.h0[ifo] == 0)[0] # store indices where h0 is zero to avoid nans later.
+            idxs_zeros = np.where((self.h0[ifo] == 0.))[0] # store indices where h0 is zero to avoid nans later.
+            self.h0[ifo][idxs_zeros] = np.inf
         
 
 
@@ -304,7 +306,7 @@ class RelativeBinning(Likelihood):
 
         for ifo in h.keys():
             r = h[ifo]/self.h0[ifo]
-            r[self.idxs_zeros[ifo]] = 0.
+            #r[self.idxs_zeros[ifo]] = 0.
 
             rpl = r[1:]
             rmin = r[:-1]
