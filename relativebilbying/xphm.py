@@ -717,7 +717,8 @@ def h_Lframe(params, f_seq, reference_frequency, l, m):
     lal_dict_L = lal.CreateDict()
     lalsim.SimInspiralWaveformParamsInsertPhenomXPHMPrecModes(lal_dict_L,1); # 1 chooses L frame instead of J frame
     try:
-        h_posf_L, _ = lalsim.SimIMRPhenomXPHMOneModeFrequencySequence(f_seq, l, m,
+        #h_posf_L, _ = lalsim.SimIMRPhenomXPHMOneModeFrequencySequence(f_seq, l, m,
+        h_posf_L, _ = lalsim.SimIMRPhenomXPHMFrequencySequenceOneMode(f_seq, l, m,
                                         params['mass_1'] * lal.MSUN_SI,
                                         params['mass_2'] * lal.MSUN_SI,
                                         params['chi_1x'],
@@ -727,6 +728,7 @@ def h_Lframe(params, f_seq, reference_frequency, l, m):
                                         params['chi_2y'],
                                         params['chi_2z'],
                                         params['luminosity_distance']*3.08567758128e22,
+                                        params['inclination'],
                                         params['phase'], #phiref doesn't matter
                                         reference_frequency, 
                                         lal_dict_L
@@ -757,13 +759,16 @@ def euler_angles(params, f_seq, waveform_arugments, mprime):
     hard_code_fmax = 0. ## this number is irrlevant so hard coding it
         # change flag to return an error if MSA fails
     lalsim.SimInspiralWaveformParamsInsertPhenomXPrecVersion(lalDict_MSA, 223)
-    lalsim.SimIMRPhenomXPMSAAngles(phiz_of_f, zeta_of_f, costhetaL_of_f, f_seq,
+    #print('get info')
+    phiz_of_f, zeta_of_f, costhetaL_of_f, = lalsim.SimIMRPhenomXPMSAAngles(f_seq,
                                params['mass_1'] * lal.MSUN_SI,
                                params['mass_2'] * lal.MSUN_SI,
                                params['chi_1x'], params['chi_1y'], params['chi_1z'],
                                params['chi_2x'], params['chi_2y'], params['chi_2z'],
-                               waveform_arugments['reference_frequency'], waveform_arugments['minimum_frequency'], hard_code_fmax , mprime,
+                               params['inclination'],
+                               waveform_arugments['reference_frequency'], mprime,
                                lalDict_MSA);
+    #waveform_arugments['minimum_frequency'], hard_code_fmax
     alpha   = phiz_of_f.data + np.pi - params['kappa']
     beta    = np.unwrap(np.arccos(costhetaL_of_f.data))
     epsilon = zeta_of_f.data # gamma = -epsilon
