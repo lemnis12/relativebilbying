@@ -6,6 +6,8 @@ Relative binning is a method to perform bayesian parameter inference for gravita
 
 In this repo, we use the ideas from [Zackay et al](https://arxiv.org/pdf/1806.08792.pdf) and convert them into a bilby compatible format, making it easier to use.
 
+The codebase to perform PE with IMRPhenomXPHM waveform is based on the work by [Narola et al](https://arxiv.org/pdf/2308.12140.pdf)
+
 If you use this code for your work, please give due credits by citating the methodology papers:
 
 @article{Zackay:2018qdy,
@@ -42,6 +44,16 @@ If you use this code for your work, please give due credits by citating the meth
     pages = "123030",
     year = "2021"
 }
+
+@article{Narola:2023men,
+    author = "Narola, Harsh and Janquart, Justin and Meijer, Quirijn and Haris, K. and Van Den Broeck, Chris",
+    title = "{Relative binning for complete gravitational-wave parameter estimation with higher-order modes and precession, and applications to lensing and third-generation detectors}",
+    eprint = "2308.12140",
+    archivePrefix = "arXiv",
+    primaryClass = "gr-qc",
+    month = "8",
+    year = "2023"
+}
 )
 
 
@@ -60,7 +72,7 @@ a) Using PyPI, you can just run  `pip install relativebilbying`
 b) using this repo:
 - clone the repository
 - run `pip install .`
-- When using the code for the waveforms with HOM and precession, the lalsimulation needs to installed from Geraint Pratten's [repository](https://github.com/GeraintPratten/lalsuite_gp)
+
 
 
 ### Structure of the repo
