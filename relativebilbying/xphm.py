@@ -641,7 +641,6 @@ def wignerd_dict(l, m, mprime, beta):
     return f(c, s), f(s, c)
 
 
-
 def Atransfer_slow(l, m, mprime, alpha, beta, theta_jn):
     """
     Computes the mode-by-mode transfer function A defined in equation 3.7 of https://arxiv.org/pdf/2004.06503.pdf.
