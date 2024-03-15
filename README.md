@@ -2,11 +2,11 @@
 
 This code is a complement to the `bilby` package and enables one to perform relative binning in [`bilby`](https://git.ligo.org/tomasz.baka/bilby). The code can use waveform with higher order modes and precession to perform parameter estimation. The code is also able to peform joint parameter estimation for strongly lensed events. 
 
-Relative binning is a method to perform bayesian parameter inference for gravitational waves in a faster way. It has been developped in [Zackay et al](https://arxiv.org/pdf/1806.08792.pdf), [Dai et al](https://arxiv.org/pdf/1806.08793.pdf), and [Dai et al, repo](https://bitbucket.org/dailiang8/gwbinning/src/master/). Additionally, attempts have been made to develop relative binning for higher-order modes waveforms (see [Leslie et al](https://arxiv.org/pdf/2109.09872.pdf)). 
+Relative binning is a method to perform bayesian parameter inference for gravitational waves in a faster way. It has been developped in [Zackay et al (2018)](https://arxiv.org/pdf/1806.08792.pdf), [Dai et al (2018)](https://arxiv.org/pdf/1806.08793.pdf), and [Dai et al, repo](https://bitbucket.org/dailiang8/gwbinning/src/master/). Additionally, attempts have been made to develop relative binning for higher-order modes waveforms (see [Leslie et al (2021)](https://arxiv.org/pdf/2109.09872.pdf)). 
 
-In this repo, we use the ideas from [Zackay et al](https://arxiv.org/pdf/1806.08792.pdf) and convert them into a bilby compatible format, making it easier to use.
+In this repo, we use the ideas from [Zackay et al (2018)](https://arxiv.org/pdf/1806.08792.pdf) and convert them into a bilby compatible format, making it easier to use.
 
-The codebase to perform PE with IMRPhenomXPHM waveform is based on the work by [Narola et al](https://arxiv.org/pdf/2308.12140.pdf)
+The codebase to perform PE with IMRPhenomXPHM waveform is based on the work by [Narola et al (2023)](https://arxiv.org/pdf/2308.12140.pdf)
 
 If you use this code for your work, please give due credits by citating the methodology papers:
 
@@ -31,6 +31,7 @@ If you use this code for your work, please give due credits by citating the meth
 }
 
 (for higher order modes:
+
 @article{Leslie:2021ssu,
     author = "Leslie, Nathaniel and Dai, Liang and Pratten, Geraint",
     title = "{Mode-by-mode relative binning: Fast likelihood estimation for gravitational waveforms with spin-orbit precession and multiple harmonics}",
@@ -54,6 +55,7 @@ If you use this code for your work, please give due credits by citating the meth
     month = "8",
     year = "2023"
 }
+
 )
 
 
