@@ -17,7 +17,7 @@ seed = 2023
 total_err = 0.01
 
 injection_parameters = dict(
-    mass_1=36.0,
+    mass_1=90.0,
     mass_2=29.0,
     a_1=0.4,
     a_2=0.3,
@@ -142,7 +142,7 @@ print('maximum freq of lal', lal_max_f)
 ############################
 
 
-likelihood = separate_l_likelihood.RelativeBinningHOM(ifos, injection_parameters, test_parameters, prior, lal_max_f, mode_array, waveform_arguments, total_err, rebin_c = False, grid_choice = 'step')
+likelihood = separate_l_likelihood.RelativeBinningHOM(ifos, injection_parameters, test_parameters, prior, lal_max_f, mode_array, waveform_arguments, total_err, grid_choice = 'step')
 
 
 
