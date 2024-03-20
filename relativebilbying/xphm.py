@@ -758,21 +758,23 @@ def euler_angles(params, f_seq, waveform_arugments, mprime):
     hard_code_fmax = 0. ## this number is irrlevant so hard coding it
         # change flag to return an error if MSA fails
     lalsim.SimInspiralWaveformParamsInsertPhenomXPrecVersion(lalDict_MSA, 223)
-    #print('get info')
-    phiz_of_f, zeta_of_f, costhetaL_of_f, = lalsim.SimIMRPhenomXPMSAAngles(f_seq,
+    phiz_of_f, zeta_of_f, costhetaL_of_f = lalsim.SimIMRPhenomXPMSAAngles(f_seq,
                                params['mass_1'] * lal.MSUN_SI,
                                params['mass_2'] * lal.MSUN_SI,
                                params['chi_1x'], params['chi_1y'], params['chi_1z'],
                                params['chi_2x'], params['chi_2y'], params['chi_2z'],
-                               params['inclination'],
+                               0,   ### this is inclination which is set to zero. It needs to be set to params['inclination'] if you want to use PhenomPNR waveforms
                                waveform_arugments['reference_frequency'], mprime,
                                lalDict_MSA);
-    #waveform_arugments['minimum_frequency'], hard_code_fmax
+    
+
     alpha   = phiz_of_f.data + np.pi - params['kappa']
+    
     beta    = np.unwrap(np.arccos(costhetaL_of_f.data))
+    
     epsilon = zeta_of_f.data # gamma = -epsilon
-    #print('beta', beta)
-    return alpha, beta, -epsilon
+
+    return alpha, beta, epsilon
 
 
 
